@@ -1,0 +1,439 @@
+:root {
+    /* Primary Colors */
+    --color-blush-pink: #f9bbbc;
+    --color-warm-coral: #ef3972;
+    --color-soft-peach: #ddecfc;
+  
+    /* Accent Colors */
+    --color-golden-yellow: #ffd56b;
+    --color-lavender: #d5b3e7;
+  
+    /* Dark Mode Colors */
+    --color-dark-plum: #3b1f2b;
+    --color-muted-pink: #c68a9a;
+    --color-cream-white:  #ffffff;
+    --color-soft-gray: #b0afaf;
+  
+    /* Font Families */
+    --font-header: 'Poppins', sans-serif;
+    --font-body: 'Raleway', sans-serif;
+  
+    /* Common Text Colors */
+    --color-text-dark: #2d2d2d;
+    --color-text-light: #fff4e1;
+  
+    /* Shadow */
+    --box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+    /* Border Radius */
+    --border-radius: 8px;
+}
+  /* ==========================
+     2. BASE STYLES (TYPOGRAPHY & LAYOUT)
+  ========================== */
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+;
+  }
+  
+  /* Global Heading Styles */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-header);
+    color: var(--color-warm-coral);
+    margin: 1rem 0;
+  }
+  
+  /* Paragraphs */
+  p {
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+   /* ==========================
+     3. NAVBAR STYLES
+  ========================== */
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-soft-peach);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--box-shadow-light); 
+  transition: background-color 0.3s; 
+}
+
+.logo a {
+  font-size: 1.5rem;
+  color: var(--color-warm-coral);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-item {
+  position: relative;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--color-text-dark);
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.2rem;
+  background-color: var(--color-warm-coral);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Active Link */
+.nav-item.active {
+  color: var(--color-warm-coral);
+}
+
+/* Responsive Menu Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-warm-coral);
+  margin: 4px;
+  transition: all 0.3s;
+}
+
+/* ==========================
+RESPONSIVE NAVIGATION
+========================== */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: var(--color-soft-peach);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links li {
+    margin: 1.5rem 0;
+  }
+
+  .navbar.open .nav-links {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translateY(5px);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-5px);
+  }
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-soft-peach);
+    color: var(--color-dark-plum);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* ==========================
+SEARCH SECTION STYLES
+========================== */
+.search-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.search-section h2 {
+    font-family: var(--font-header);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-warm-coral);
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#search-input {
+    padding: 0.75rem;
+    width: 300px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-warm-coral);
+}
+
+.search-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-warm-coral);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: var(--color-blush-pink);
+}
+
+/* ==========================
+FILTERS SECTION STYLES
+========================== */
+.filters-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.filters-section h3 {
+  font-family: var(--font-header);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-warm-coral);
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  /* padding */
+
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-soft-peach);
+  color: var(--color-dark-plum);
+  border: 1px solid var(--color-warm-coral);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s;
+}
+
+.filters .filter-btn.active {
+  background-color: var(--color-warm-coral);
+  color: white;
+}
+
+.filter-btn:hover {
+  background-color: var(--color-warm-coral);
+  color: white;
+}
+
+.filter-btn:active {
+  background-color: var(--color-warm-coral);
+  color: white;
+}
+
+/* ==========================
+EPISODES SECTION STYLES
+=================== */
+.episodes-section {
+    margin-top: 2rem;
+    margin-bottom: 30px;
+}
+
+.episodes-section h3 {
+    font-family: var(--font-header);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-warm-coral);
+    text-align: center;
+}
+
+.episodes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.episode-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.episode-thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+.episode-info {
+    padding: 1rem;
+}
+
+.episode-info h4 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: var(--color-warm-coral);
+}
+
+.episode-info p {
+    font-size: 0.9rem;
+    color: var(--color-dark-plum);
+    margin-bottom: 1rem;
+}
+
+.audio {
+    margin: 1rem 0;
+    width: auto;
+}
+
+.episode-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Icon button styles */
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.3s ease-in-out;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.icon-button:hover {
+    transform: scale(1.1); 
+}
+
+/* Heart icon styling */
+.icon-button i {
+    color: var(--color-warm-coral);
+    transition: color 0.3s ease-in-out;
+}
+
+.icon-button:hover i {
+    color: var(--color-dark-gray); 
+}
+
+/* Like number styling */
+.like_no {
+    font-size: 1rem;
+    color: var(--color-dark-gray);
+    margin-left: 0.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.comment_no {
+  font-size: 1rem;
+  color: var(--color-dark-gray);
+  margin-left: 0.5rem;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.icon-button:hover .like_no {
+    color: var(--color-warm-coral); 
+}
+
+.icon-flag {
+    width: 24px;
+    height: 24px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    font-family: var(--font-body);
+    font-size: 14px;
+}
+
+.comment-form button {
+    cursor: pointer;
+}
+
+.comment {
+    box-shadow: var(--box-shadow-light);
+}
+
+/* ==========================
+   FOOTER STYLES
+========================== */
+.footer {
+    background-color: var(--color-soft-peach);
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid var(--color-muted-pink);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.footer-copy {
+    font-family: var(--font-body);
+    color: var(--color-text-dark);
+    margin-top: 10px;
+}

@@ -1,0 +1,350 @@
+:root {
+    /* Primary Colors */
+    --color-blush-pink: #f9bbbc;
+    --color-warm-coral: #ef3972;
+    --color-soft-peach: #ddecfc;
+  
+    /* Accent Colors */
+    --color-golden-yellow: #ffd56b;
+    --color-lavender: #d5b3e7;
+  
+    /* Dark Mode Colors */
+    --color-dark-plum: #3b1f2b;
+    --color-muted-pink: #c68a9a;
+    --color-cream-white:  #ffffff;
+    --color-soft-gray: #b0afaf;
+  
+    /* Font Families */
+    --font-header: 'Poppins', sans-serif;
+    --font-body: 'Raleway', sans-serif;
+  
+    /* Common Text Colors */
+    --color-text-dark: #2d2d2d;
+    --color-text-light: #fff4e1;
+  
+    /* Shadow */
+    --box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+    /* Border Radius */
+    --border-radius: 8px;
+}
+  /* ==========================
+     2. BASE STYLES (TYPOGRAPHY & LAYOUT)
+  ========================== */
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Global Heading Styles */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-header);
+    color: var(--color-warm-coral);
+    margin: 1rem 0;
+  }
+  
+  /* Paragraphs */
+  p {
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+   /* ==========================
+     3. NAVBAR STYLES
+  ========================== */
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-soft-peach);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--box-shadow-light); 
+  transition: background-color 0.3s; 
+}
+
+.logo a {
+  font-size: 1.5rem;
+  color: var(--color-warm-coral);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-item {
+  position: relative;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--color-text-dark);
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.2rem;
+  background-color: var(--color-warm-coral);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Active Link */
+.nav-item.active {
+  color: var(--color-warm-coral);
+}
+
+/* Responsive Menu Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-warm-coral);
+  margin: 4px;
+  transition: all 0.3s;
+}
+
+/* ==========================
+RESPONSIVE NAVIGATION
+========================== */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: var(--color-soft-peach);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links li {
+    margin: 1.5rem 0;
+  }
+
+  .navbar.open .nav-links {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translateY(5px);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-5px);
+  }
+}
+/* =============================
+    SIGN-UP PAGE STYLES
+============================= */
+
+.signup-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background: var(--color-soft-peach);
+    padding: 10px;
+  }
+  
+  .signup-container {
+    background-color: var(--color-cream-white);
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .signup-header {
+    font-family: var(--font-header);
+    font-size: 2rem;
+    color: var(--color-warm-coral);
+    margin-bottom: 1rem;
+  }
+  
+  .signup-subtext {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    color: var(--color-dark-plum);
+    margin-bottom: 2rem;
+  }
+  
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  label {
+    font-family: var(--font-body);
+    color: var(--color-dark-plum);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  input[type="text"], 
+  input[type="email"], 
+  input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-soft-gray);
+    border-radius: var(--border-radius);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-dark);
+    transition: border 0.3s;
+  }
+  
+  input[type="text"]:focus, 
+  input[type="email"]:focus, 
+  input[type="password"]:focus {
+    border-color: var(--color-warm-coral);
+    outline: none;
+  }
+  
+  .signup-btn {
+    background-color: var(--color-warm-coral);
+    color: var(--color-text-light);
+    padding: 0.75rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-header);
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signup-btn:hover {
+    background-color: var(--color-blush-pink);
+  }
+  
+  .signup-footer {
+    margin-top: 1.5rem;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--color-dark-plum);
+  }
+  
+  .signup-footer a {
+    color: var(--color-warm-coral);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .signup-footer a:hover {
+    color: var(--color-blush-pink);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .signup-container {
+      padding: 1.5rem 2rem;
+    }
+  
+    .signup-header {
+      font-size: 1.75rem;
+    }
+  
+    .signup-subtext {
+      font-size: 1rem;
+    }
+  
+    .signup-btn {
+      font-size: 1rem;
+    }
+  }
+/* ==========================
+FOOTER STYLES
+========================== */
+.footer {
+    background-color: var(--color-soft-peach);
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid var(--color-muted-pink);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links, .footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-links a, .footer-socials a {
+    color: var(--color-warm-coral);
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: color 0.3s;
+}
+
+.footer-links a:hover, .footer-socials a:hover {
+    color: var(--color-muted-pink);
+}
+
+.footer-copy {
+    font-family: var(--font-body);
+    color: var(--color-text-dark);
+    margin-top: 10px;
+}

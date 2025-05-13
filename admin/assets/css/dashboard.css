@@ -1,0 +1,472 @@
+:root {
+    /* Primary Colors */
+    --color-blush-pink: #f9bbbc;
+    --color-warm-coral: #ef3972;
+    --color-soft-peach: #ddecfc;
+
+    /* Accent Colors */
+    --color-golden-yellow: #ffe089;
+    --color-lavender: #e6cdea;
+
+    /* Dark Mode Colors */
+    --color-dark-plum: #4799f1;
+    --color-white: #FFFFFF;
+    --color-muted-pink: ##d6a2b2;
+    --color-cream-white: #fff7e6;
+    --color-soft-gray: #c2c2c2;
+
+    /* Font Families */
+    --font-header: 'Poppins', sans-serif;
+    --font-body: 'Raleway', sans-serif;
+
+    /* Common Text Colors */
+    --color-text-dark: #2d2d2d;
+    --color-text-light: #fff4e1;
+
+    /* Shadow */
+    --box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Border Radius */
+    --border-radius: 8px;
+}
+
+/* Global styles */
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-soft-peach);
+    color: var(--color-text-dark);
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 180px;
+    background-color: var(--color-dark-plum);
+    color: var(--color-text-light);
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar-header {
+    font-family: var(--font-header);
+    font-size: 24px;
+    text-align: center;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    overflow: auto;
+}
+
+.sidebar-menu li {
+    margin: 20px 0;
+}
+
+.sidebar-menu li a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-menu li a i {
+    margin-right: 10px;
+    transition: ease-in-out 0.5s;
+}
+
+.sidebar-menu li a:hover {
+    background-color: var(--color-warm-coral);
+    padding: 10px;
+    border-radius: var(--border-radius);
+}
+.sidebar-menu li a.active {
+    background-color: var(--color-warm-coral);
+    padding: 10px;
+    border-radius: var(--border-radius);
+}
+/* Sidebar footer */
+.sidebar-footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    color: var(--color-text-light);
+    border-top: 1px solid var(--color-muted-pink);
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+.main-header {
+    font-family: var(--font-header);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Cards Section */
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--color-blush-pink);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
+    text-align: center;
+    height: 100%;
+}
+
+.card h3 {
+    font-family: var(--font-header);
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 16px;
+    color: var(--color-text-dark);
+}
+
+/* Forms */
+.section {
+    margin-top: 40px;
+}
+
+.section h2 {
+    font-family: var(--font-header);
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.form {
+    background-color: var(--color-cream-white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: var(--color-text-dark);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 92%;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-soft-gray);
+}
+
+.form-group input[type="file"] {
+    padding: 5px;
+}
+
+.btn {
+    background-color: var(--color-warm-coral);
+    color: var(--color-text-light);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: var(--color-blush-pink);
+}
+/* User Table Styles */
+/* User Table Styles */
+.user-table {
+    margin-top: 20px;
+    width: 100%; /* Ensure the table takes the full width */
+}
+
+.user-table th, .user-table td {
+    vertical-align: middle;
+}
+
+.user-table thead {
+    background-color: var(--color-dark-plum);
+    color: var(--color-text-light);
+}
+
+.user-table tbody tr:hover {
+    background-color: var(--color-soft-peach);
+}
+
+.user-edit-button,
+.user-delete-button {
+    font-size: 14px;
+    margin: 0; /* Reset margin for buttons to avoid overflow */
+    border-radius: var(--border-radius);
+    width: 100%; /* Make buttons fill their cell */
+}
+
+td {
+    padding: 0.5rem; /* Add padding to table cells for better spacing */
+}
+
+.badge.user-status-active {
+    background-color: #28a745; /* Active status color */
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: var(--border-radius);
+}
+
+.badge.user-status-pending {
+    background-color: #ffc107; /* Pending status color */
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: var(--border-radius);
+}
+
+.badge.user-status-inactive {
+    background-color: #6c757d; /* Inactive status color */
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: var(--border-radius);
+}
+
+/* Enquiry Table Styles */
+.enquiry-table {
+    margin-top: 20px;
+}
+
+.enquiry-table th, .enquiry-table td {
+    vertical-align: middle;
+}
+
+.enquiry-table thead {
+    background-color: var(--color-dark-plum);
+    color: var(--color-text-light);
+}
+
+.enquiry-table tbody tr:hover {
+    background-color: var(--color-soft-peach);
+}
+
+.enquiry-view-button,
+.enquiry-delete-button {
+    background-color: var(--color-warm-coral);
+    color: var(--color-text-light);
+    margin: 0.5rem;
+    font-size: 14px;
+    margin-right: 5px;
+    border-radius: var(--border-radius);
+}
+
+.badge.enquiry-status-replied {
+    background-color: #28a745; /* Replied status color */
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: var(--border-radius);
+}
+
+.badge.enquiry-status-pending {
+    background-color: #ffc107; /* Pending status color */
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: var(--border-radius);
+}
+
+.badge.enquiry-status-not-replied {
+    background-color: #6c757d; /* Not replied status color */
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: var(--border-radius);
+}
+
+.alert {
+    border-radius: var(--border-radius);
+    background-color: var(--color-golden-yellow);
+    color: var(--color-text-dark);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 20px;
+    box-shadow: var(--box-shadow-light);
+}
+
+/* Form Section */
+.add-admin-form-section {
+    background-color: var(--color-cream-white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
+    margin-top: 20px;
+}
+
+.add-admin-form-section h2 {
+    font-family: var(--font-header);
+    color: var(--color-dark-plum);
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.form-group label {
+    font-family: var(--font-header);
+    font-weight: 600;
+    color: var(--color-dark-plum);
+}
+
+.form-control {
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-soft-gray);
+    box-shadow: var(--box-shadow-light);
+    padding: 10px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: var(--color-muted-pink);
+    box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+}
+
+.btn-primary {
+    background-color: var(--color-warm-coral);
+    border-color: var(--color-warm-coral);
+    color: var(--color-text-light);
+    font-family: var(--font-header);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-blush-pink);
+    border-color: var(--color-blush-pink);
+    color: var(--color-text-light);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 10px;
+    }
+
+    .alert, .add-admin-form-section {
+        padding: 15px;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .btn-primary {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+.profile-settings-section {
+    background-color:var(--color-cream-white); /* White background */
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-settings-section h2 {
+    color: #343a40; /* Dark text */
+}
+
+.profile-settings-section .form-group {
+    margin-bottom: 20px; /* Space between form groups */
+}
+
+.profile-settings-section label {
+    font-weight: 600;
+}
+
+.profile-settings-section input {
+    border-radius: 5px;
+    border: 1px solid #ced4da; /* Light border */
+    padding: 10px;
+    width: 92%; 
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.profile-settings-section input:focus {
+    border-color: #0062cc; /* Focus color */
+    box-shadow: 0 0 5px rgba(0, 98, 204, 0.5);
+    outline: none; /* Remove default outline */
+}
+
+.profile-settings-section button {
+    background-color: var(--color-warm-coral);
+    color: var(--color-text-light);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.profile-settings-section button:hover {
+    background-color: var(--color-blush-pink);
+}
+
+.logout-section {
+    background-color: #ffffff; /* White background */
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center-align text */
+}
+
+.logout-section h2 {
+    color: #343a40; /* Dark text */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.logout-section p {
+    color: #495057; /* Medium text color */
+    margin-bottom: 30px; /* Space below the message */
+}
+
+.logout-actions {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    gap: 20px; /* Space between buttons */
+}
+
+.logout-section .btn {
+    background-color: #0062cc; /* Primary button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s;
+}
+
+.logout-section .confirm-logout {
+    background-color: #d9534f; /* Red color for logout confirmation */
+}
+
+.logout-section .confirm-logout:hover {
+    background-color: #c9302c; /* Darker red on hover */
+}
+
+.logout-section .cancel-logout {
+    background-color: #6c757d; /* Gray color for cancel */
+}
+
+.logout-section .cancel-logout:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+}
